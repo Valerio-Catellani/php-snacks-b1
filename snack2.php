@@ -48,15 +48,15 @@ if ((!empty($_GET['email'])) && !empty($_GET['nome']) && !empty($_GET['age'])) {
     </h1>
 
     <form action="snack2.php" method="get">
-      <div class="mb-3">
+      <div class="mb-3 shadow">
         <label for="exampleInputEmail1" class="form-label">Indirizzo Email</label>
         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
       </div>
-      <div class="mb-3">
+      <div class="mb-3 shadow">
         <label for="nome" class="form-label">Nome</label>
         <input type="text" class="form-control" id="nome" aria-describedby="emailHelp" name="nome">
       </div>
-      <div class="mb-3">
+      <div class="mb-3 shadow">
         <label for="age" class="form-label">Età</label>
         <input type="text" class="form-control" id="age" aria-describedby="emailHelp" name="age">
       </div>

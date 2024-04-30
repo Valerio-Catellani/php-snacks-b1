@@ -50,7 +50,7 @@ $partite = [
       Snack1
     </h1>
     <?php foreach ($partite as $partita) { ?>
-      <p><?php echo $partita['squadraCasa']; ?> vs <?php echo $partita['squadraOspite']; ?> | <?php echo $partita['puntiCasa']; ?> - <?php echo $partita['puntiOspite']; ?></p>
+      <p class="fw-bold bg-primary-subtle"><?php echo $partita['squadraCasa']; ?> vs <?php echo $partita['squadraOspite']; ?> | <?php echo $partita['puntiCasa']; ?> - <?php echo $partita['puntiOspite']; ?></p>
     <?php } ?>
   </div>
 

@@ -66,7 +66,7 @@ $posts = [
     <h1 class="mb-4">Snack3</h1>
     <?php
     foreach ($posts as $data => $postArrayAssociati) {
-      echo '<div class="mb-5 border border-black bg-warning-subtle rounded-4">' . "<h2>$data</h2>";
+      echo '<div class="mb-5 border border-black bg-warning-subtle rounded-4 p-3 shadow">' . "<h4>$data</h4>";
       foreach ($postArrayAssociati as $post) {
         echo '<div>' .
           '<h3>' . $post['title'] . '</h3>' .
