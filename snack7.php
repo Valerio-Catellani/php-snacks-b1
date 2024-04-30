@@ -1,10 +1,33 @@
 <?php
 /*
- Stampiamo il nostro array mettendo gli insegnanti in un rettangolo grigio e i PM in un rettangolo verde.
+Creare un array contenente qualche alunno di un’ipotetica classe. Ogni alunno avrà Nome, Cognome e un array contenente i suoi voti scolastici. Stampare Nome, Cognome e la media dei voti di ogni alunno.
 */
+$classe = [
+  [
+    'nome' => 'Mario',
+    'cognome' => 'Rossi',
+    'voti' => [8, 7, 6, 9, 8]
+  ],
+  [
+    'nome' => 'Anna',
+    'cognome' => 'Verdi',
+    'voti' => [7, 6, 8, 7, 8]
+  ],
+  [
+    'nome' => 'Luigi',
+    'cognome' => 'Bianchi',
+    'voti' => [9, 9, 8, 10, 7]
+  ]
+];
 
-
-
+function media($array)
+{
+  $sum = 0;
+  foreach ($array as $element) {
+    $sum += $element;
+  }
+  return $sum / count($array);
+};
 
 ?>
 
@@ -23,24 +46,25 @@
   <link rel="stylesheet" href="resources/css/animation.css">
   <link rel="stylesheet" href="resources/css/media-query.css">
   <script src="resources/js/script.js" type="text/javascript" defer></script>
-  <title>Snack6</title>
+  <title>Snack7</title>
 </head>
 
 <body class="bg-dark p-5 text-white">
   <div class=' container border rounded-4 border-warning border-3 text-dark bg-primary-subtle p-3'>
-    <h1 class="mb-4 text-center">Snack6</h1>
-    <div class="border border-black p-2 rounded-3 shadow bg-dark-subtle">
-      <h4 class="text-center">Insegnanti</h4>
-      <?php echo getElement($db, 'teachers'); ?>
-    </div>
-    <div class="border border-black p-2 rounded-3 mt-3 shadow bg-success-subtle ">
-      <h4 class="text-center">PM</h4>
-      <?php echo getElement($db, 'pm'); ?>
-    </div>
-  </div>
+    <h1 class="mb-4 text-center">Snack7</h1>
+    <?php
+    foreach ($classe as $studente => $value) {
+      echo '<div  class="border border-black p-2 rounded-3 shadow bg-dark-subtle my-3">' .
+        '<h3 class="text-center">' . $value['nome'] . ' ' . $value['cognome'] . '</h3>' .
+        '<h4> Elenco voti: ' . implode(', ', $value['voti']) . '</h4>' .
+        '<h2> Media: ' . media($value['voti']) . '</h2>' .
+        '</div>';
+    }
+    ?>
 
 
-  <script src="resources/js/hypeUtility.js" type="text/javascript"></script>
+
+    <script src="resources/js/hypeUtility.js" type="text/javascript"></script>
 </body>
 
 <style>
